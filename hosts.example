@@ -1,0 +1,6 @@
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[ubuntu]
+gloria@192.0.2.1
+
