@@ -15,4 +15,4 @@ fi
 /usr/bin/host github.com >> 'ubuntubook-update.log'
 /usr/bin/git fetch origin release 2>&1 | tee -a ubuntubook-update.log
 /usr/bin/git reset --hard origin/release 2>&1 | tee -a ubuntubook-update.log
-/usr/local/bin/ansible-playbook playbook-local.yml 2>&1 | tee -a ubuntubook-update.log
+/usr/local/bin/ansible-playbook playbook-local.yml -v 2>&1 | tee -a ubuntubook-update.log

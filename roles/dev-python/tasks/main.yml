@@ -24,4 +24,5 @@
       - matplotlib
       - opencv-python
       - sounddevice
+      - pyserial
       - Flask
