@@ -9,7 +9,7 @@
 - name: 'ubuntubook-update sudoers'
   copy:
     src: files/sudoers_ubuntubook_update.conf
-    dest: /etc/sudoers.d/ubuntubook-update.conf
+    dest: /etc/sudoers.d/ubuntubook-update
     owner: root
     group: root
     mode:  '0440'
