@@ -1,0 +1,16 @@
+- name: '/etc/nftables.conf'
+  copy:
+    src: files/nftables.conf
+    dest: /etc/nftables.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'nftables'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - nftables
+- name: 'enable nftables.service'
+  systemd:
+    enabled: yes
+    name: nftables.service

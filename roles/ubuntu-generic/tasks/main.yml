@@ -1,0 +1,34 @@
+- name: 'timezone'
+  file:
+    src: '/usr/share/zoneinfo/Japan'
+    dest: '/etc/localtime'
+    state: link
+- name: '20auto-upgrades'
+  copy:
+    src: files/20auto-upgrades
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'update cache'
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    force_apt_get: yes
+- name: 'upgrade all'
+  apt:
+    name: '*'
+    state: latest
+    force_apt_get: yes
+- name: 'utility packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - tmux
+      - zsh
+- name: 'wireguard'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - wireguard
+      - wireguard-tools

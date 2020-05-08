@@ -1,0 +1,46 @@
+- name: 'desktop & language packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - ubuntu-desktop-minimal
+      - language-pack-ja
+      - language-pack-gnome-ja
+      - mozc-utils-gui
+      - firefox-locale-ja
+      - gnome-user-docs-ja
+      - ibus-mozc
+      - fonts-noto-cjk-extra
+      - gnome-getting-started-docs-ja
+- name: 'utility packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - emacs
+      - openvpn
+      - tigervnc-viewer
+- name: 'libreoffice'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - libreoffice
+      - libreoffice-l10n-ja
+- name: 'thunderbird'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - thunderbird
+      - thunderbird-locale-ja
+- name: 'snap packages'
+  snap:
+    classic: yes
+    name:
+      - chromium
+      - code
+      - blender
+- name: 'remove unuse packages'
+  apt:
+    force_apt_get: yes
+    state: absent
+    pkg:
+    name:
+      - gnome-initial-setup

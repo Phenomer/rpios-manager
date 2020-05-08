@@ -1,0 +1,6 @@
+- name: 'download zoom'
+  get_url:
+    url=https://zoom.us/client/latest/zoom_amd64.deb
+    dest=/var/cache/apt/archives/zoom_amd64.deb
+- name: 'install zoom'
+  apt: deb=/var/cache/apt/archives/zoom_amd64.deb

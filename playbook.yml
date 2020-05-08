@@ -1,0 +1,15 @@
+---
+- hosts: ubuntu
+  gather_facts: no
+  become: yes
+  roles:
+    - ubuntu-generic
+    - basic-firewall
+    - accounts
+    - ldap-client
+    # - desktop
+    # - dev-generic
+    # - dev-ruby
+    # - dev-python
+    # - zoom
+    # - latex

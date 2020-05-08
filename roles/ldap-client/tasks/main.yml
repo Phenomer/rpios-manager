@@ -1,0 +1,44 @@
+- name: 'sssd package'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - sssd
+      - sssd-ldap
+      - sssd-tools
+- name: 'sssd.conf'
+  copy:
+    src: files/sssd.conf
+    dest: /etc/sssd/sssd.conf
+    owner: root
+    group: root
+    mode:  '0600'
+- name: 'ldap ca.crt'
+  copy:
+    src: files/ldap_ca.crt
+    dest: /etc/ldap/ca.crt
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'sshd_config sss pubkey'
+  copy:
+    src: files/sshd_config_sss
+    dest: /etc/ssh/sshd_config.d/sss.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'disable sssd-nss.socket'
+  systemd:
+    enabled: no
+    name: sssd-nss.socket
+- name: 'disable sssd-pam.socket'
+  systemd:
+    enabled: no
+    name: sssd-pam.socket
+- name: 'disable sssd-pam-priv.socket'
+  systemd:
+    enabled: no
+    name: sssd-pam-priv.socket
+- name: 'disable sssd-ssh.socket'
+  systemd:
+    enabled: no
+    name: sssd-ssh.socket

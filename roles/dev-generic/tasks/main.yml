@@ -1,0 +1,13 @@
+- name: 'development packages(generic)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - git
+      - build-essential
+      - cmake
+      - bc
+      - mecab
+      - libssl-dev
+      - zlib1g-dev
+      - libyaml-dev
+      - linux-headers-generic

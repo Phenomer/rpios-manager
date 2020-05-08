@@ -1,0 +1,11 @@
+- name: 'texlive packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - texlive-full
+      - fonts-ipaexfont
+      - evince
+- name: 'texlive config(1)'
+  command: cjk-gs-integrate --link-texmf --force
+- name: 'texlive config(2)'
+  command: kanji-config-updmap-sys ipaex

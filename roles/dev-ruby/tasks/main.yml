@@ -1,0 +1,7 @@
+- name: 'development package(ruby)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - ruby
+      - ruby-dev
+      - ruby-bundler
