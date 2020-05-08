@@ -13,7 +13,7 @@
 - name: 'update cache'
   apt:
     update_cache: yes
-    cache_valid_time: 3600
+    cache_valid_time: 10800
     force_apt_get: yes
 - name: 'upgrade all'
   apt:
