@@ -13,3 +13,4 @@
       - linux-headers-generic
       - sqlite3
       - libsqlite3-dev
+      - r-base
