@@ -26,6 +26,20 @@
     pkg:
       - tmux
       - zsh
+- name: 'skel/tmux.conf'
+  copy:
+    src: files/tmux.conf
+    dest: /etc/skel/.tmux.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'skel/.zshrc'
+  copy:
+    src: files/zshrc
+    dest: /etc/skel/.zshrc
+    owner: root
+    group: root
+    mode:  '0644'
 - name: 'wireguard'
   apt:
     force_apt_get: yes

@@ -1,7 +1,18 @@
 #!/bin/sh
 
 cd /opt/ubuntubook
-/usr/bin/git fetch origin release
-/usr/bin/git reset --hard origin/release
-/usr/local/bin/ansible-playbook playbook-local.yml
 
+if [ -e /var/log/dmesg ]; then
+    /bin/cp /var/log/dmesg ubuntubook-update.log
+    echo > 'ubuntubook-update.log'
+else
+    echo > 'ubuntubook-update.log'
+fi
+
+echo /bin/date  >> 'ubuntubook-update.log'
+echo /sbin/ip a >> 'ubuntubook-update.log'
+echo /bin/df -h >> 'ubuntubook-update.log'
+echo /usr/bin/host github.com >> 'ubuntubook-update.log'
+/usr/bin/git fetch origin release 2>&1 | tee -a ubuntubook-update.log
+/usr/bin/git reset --hard origin/release 2>&1 | tee -a ubuntubook-update.log
+/usr/local/bin/ansible-playbook playbook-local.yml 2>&1 | tee -a ubuntubook-update.log

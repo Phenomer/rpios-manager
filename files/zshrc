@@ -1,0 +1,13 @@
+umask 022
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+prompt adam1
+
+bindkey -e
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=100000
+
