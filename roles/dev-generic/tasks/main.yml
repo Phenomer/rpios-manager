@@ -11,3 +11,5 @@
       - zlib1g-dev
       - libyaml-dev
       - linux-headers-generic
+      - sqlite3
+      - libsqlite3-dev

@@ -5,3 +5,23 @@
       - python3-dev
       - python3-pip
       - pipenv
+- name: 'Jupyter Notebook'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - jupyter-notebook
+- name: 'development packages(opencv)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - libopencv-dev
+- name: 'python libs'
+  pip:
+    name:
+      - gensim
+      - numpy
+      - scipy
+      - matplotlib
+      - opencv-python
+      - sounddevice
+      - Flask
