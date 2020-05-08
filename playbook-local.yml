@@ -1,12 +1,11 @@
 ---
-- hosts: ubuntu
+- hosts: 127.0.0.1
+  connection: local
   gather_facts: no
-  become: yes
   roles:
     - ubuntu-generic
     - basic-firewall
     - accounts
-    - ubuntubook-update
     - ldap-client
     - desktop
     - dev-generic
@@ -14,3 +13,4 @@
     - dev-python
     - zoom
     - latex
+

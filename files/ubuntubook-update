@@ -3,5 +3,5 @@
 cd /opt/ubuntubook
 /usr/bin/git fetch origin release
 /usr/bin/git reset --hard origin/release
-/usr/local/bin/ansible-playbook -i localhost playbook.yml --connection=local
+/usr/local/bin/ansible-playbook playbook-local.yml
 

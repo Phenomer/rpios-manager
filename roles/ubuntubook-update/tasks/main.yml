@@ -1,0 +1,22 @@
+- name: 'ubuntubook-update ansible'
+  pip:
+    name: ansible
+- name: 'get ubuntubook-update repo'
+  git:
+    repo: https://github.com/Phenomer/ubuntubook
+    version: release
+    dest: /opt/ubuntubook
+- name: 'ubuntubook-update sudoers'
+  copy:
+    src: files/sudoers_ubuntubook_update.conf
+    dest: /etc/sudoers.d/ubuntubook-update.conf
+    owner: root
+    group: root
+    mode:  '0440'
+- name: 'ubuntubook-update command'
+  copy:
+    src: files/ubuntubook-update
+    dest: /usr/local/sbin/ubuntubook-update
+    owner: root
+    group: root
+    mode:  '0755'
