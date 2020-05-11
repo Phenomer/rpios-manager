@@ -1,0 +1,26 @@
+- name: 'emacs packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - emacs
+      - mew
+- name: 'get trr'
+  git:
+    repo: https://github.com/kawabata/emacs-trr
+    version: master
+    dest: /opt/emacs-trr
+- name: 'skel/.emacs.d'
+  file:
+    path: /etc/skel/.emacs.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: 'skel/.emacs.d/init.el'
+  copy:
+    src: files/init.el
+    dest: /etc/skel/.emacs.d/init.el
+    owner: root
+    group: root
+    mode:  '0644'

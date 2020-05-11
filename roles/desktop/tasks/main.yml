@@ -18,6 +18,8 @@
       - emacs
       - openvpn
       - tigervnc-viewer
+      - ffmpeg
+      - obs-studio
 - name: 'libreoffice'
   apt:
     force_apt_get: yes
@@ -37,6 +39,8 @@
       - chromium
       - code
       - blender
+      - inkscape
+      - gimp
 - name: 'remove unuse packages'
   apt:
     force_apt_get: yes

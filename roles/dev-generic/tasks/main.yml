@@ -14,3 +14,7 @@
       - sqlite3
       - libsqlite3-dev
       - r-base
+      - imagemagick
+      - libmagickcore-dev
+      - libmagickwand-dev
+
