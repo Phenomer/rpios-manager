@@ -20,6 +20,7 @@
       - tigervnc-viewer
       - ffmpeg
       - obs-studio
+      - qemu-kvm
 - name: 'libreoffice'
   apt:
     force_apt_get: yes
