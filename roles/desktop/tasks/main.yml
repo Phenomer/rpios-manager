@@ -42,6 +42,7 @@
       - blender
       - inkscape
       - gimp
+      - krita
 - name: 'remove unuse packages'
   apt:
     force_apt_get: yes
