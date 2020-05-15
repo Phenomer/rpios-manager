@@ -11,6 +11,7 @@
       - ibus-mozc
       - fonts-noto-cjk-extra
       - gnome-getting-started-docs-ja
+      - gnome-screenshot
 - name: 'utility packages'
   apt:
     force_apt_get: yes
@@ -21,6 +22,9 @@
       - ffmpeg
       - obs-studio
       - qemu-kvm
+      - vlc
+      - gimp
+      - inkscape
 - name: 'libreoffice'
   apt:
     force_apt_get: yes
@@ -33,15 +37,25 @@
     pkg:
       - thunderbird
       - thunderbird-locale-ja
-- name: 'snap packages'
+- name: '[snap] code'
+  snap:
+    classic: yes
+    name:
+      - code
+- name: '[snap] chromium'
   snap:
     classic: yes
     name:
       - chromium
-      - code
+- name: '[snap] blender'
+  snap:
+    classic: yes
+    name:
       - blender
-      - inkscape
-      - gimp
+- name: '[snap] krita'
+  snap:
+    classic: yes
+    name:
       - krita
 - name: 'remove unuse packages'
   apt:
