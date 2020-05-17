@@ -12,6 +12,7 @@
       - fonts-noto-cjk-extra
       - gnome-getting-started-docs-ja
       - gnome-screenshot
+      - ubuntu-gnome-default-settings
 - name: 'utility packages'
   apt:
     force_apt_get: yes

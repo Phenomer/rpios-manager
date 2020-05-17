@@ -17,4 +17,5 @@
       - imagemagick
       - libmagickcore-dev
       - libmagickwand-dev
+      - bison
 
