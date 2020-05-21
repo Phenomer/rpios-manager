@@ -1,0 +1,13 @@
+- name: 'docker packages'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - docker.io
+      - docker-compose
+- name: 'docker network config'
+  copy:
+    src: files/docker_daemon.json
+    dest: /etc/docker/docker_daemon.json
+    owner: root
+    group: root
+    mode:  '0644'
