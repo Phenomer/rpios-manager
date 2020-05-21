@@ -1,14 +1,25 @@
-- name: 'pam.d/common-session(mkhomedir)'
-  copy:
-    src: files/common-session
-    dest: /etc/pam.d/common-session
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'gdm3/custom.conf'
+- name: 'pam_mkhomedir.so'
+  pamd:
+    name: common-session
+    type: session
+    control: required
+    module_path: pam_unix.so
+    module_arguments: skel=/etc/skel umask=0022
+    new_type: session
+    new_control: required
+    new_module_path: pam_mkhomedir.so
+    state: after
+- name: 'gdm3/custom.conf(auto login)'
   copy:
     src: files/gdm3_custom.conf
     dest: /etc/gdm3/custom.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'gdm3/greeter.dconf-defaults(disable-user-list)'
+  copy:
+    src: files/greeter.dconf-defaults
+    dest: /etc/gdm3/greeter.dconf-defaults
     owner: root
     group: root
     mode:  '0644'
@@ -26,52 +37,52 @@
     owner: root
     group: root
     mode:  '0600'
-- name: Desktop
-  file:
-    path: /etc/skel/Desktop
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Documents
-  file:
-    path: /etc/skel/Documents
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Downloads
-  file:
-    path: /etc/skel/Downloads
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Public
-  file:
-    path: /etc/skel/Public
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Music
-  file:
-    path: /etc/skel/Music
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Pictures
-  file:
-    path: /etc/skel/Pictures
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
-- name: Videos
-  file:
-    path: /etc/skel/Videos
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
+# - name: Desktop
+#   file:
+#     path: /etc/skel/Desktop
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Documents
+#   file:
+#     path: /etc/skel/Documents
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Downloads
+#   file:
+#     path: /etc/skel/Downloads
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Public
+#   file:
+#     path: /etc/skel/Public
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Music
+#   file:
+#     path: /etc/skel/Music
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Pictures
+#   file:
+#     path: /etc/skel/Pictures
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'
+# - name: Videos
+#   file:
+#     path: /etc/skel/Videos
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: '0755'

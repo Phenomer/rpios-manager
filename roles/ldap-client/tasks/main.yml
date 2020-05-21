@@ -42,3 +42,27 @@
   systemd:
     enabled: no
     name: sssd-ssh.socket
+- name: '/etc/security/group.conf'
+  copy:
+    src: files/group.conf
+    dest: /etc/security/group.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: '/etc/security/group.conf'
+  copy:
+    src: files/group.conf
+    dest: /etc/security/group.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'pam_group.so'
+  pamd:
+    name: common-auth
+    type: auth
+    control: optional
+    module_path: pam_cap.so
+    new_type: auth
+    new_control: optional
+    new_module_path: pam_group.so
+    state: after
