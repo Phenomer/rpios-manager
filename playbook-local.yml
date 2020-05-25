@@ -6,6 +6,7 @@
     - ubuntu-generic
     - basic-firewall
     - accounts
+    - ubuntubook-update
     - ldap-client
     - desktop
     - dev-generic
@@ -14,3 +15,4 @@
     - zoom
     - latex
     - emacs
+    - docker
