@@ -10,6 +10,15 @@
     owner: root
     group: root
     mode:  '0644'
+- name: 'ms apt-key'
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+- name: 'ms-teams apt repo'
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main
+    state: present
+    filename: teams.list
 - name: 'update cache'
   apt:
     update_cache: yes

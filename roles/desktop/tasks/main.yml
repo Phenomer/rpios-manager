@@ -26,6 +26,11 @@
       - vlc
       - gimp
       - inkscape
+- name: 'ms teams'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - teams
 - name: 'libreoffice'
   apt:
     force_apt_get: yes
