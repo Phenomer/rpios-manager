@@ -1,3 +1,10 @@
+- name: 'enable NetworkManager'
+  copy:
+    src: files/netplan_00-installer-config.yaml
+    dest: /etc/netplan/00-installer-config.yaml
+    owner: root
+    group: root
+    mode:  '0644'
 - name: 'desktop & language packages'
   apt:
     force_apt_get: yes
