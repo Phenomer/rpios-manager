@@ -9,34 +9,6 @@
     new_control: required
     new_module_path: pam_mkhomedir.so
     state: after
-- name: 'gdm3/custom.conf(auto login)'
-  copy:
-    src: files/gdm3_custom.conf
-    dest: /etc/gdm3/custom.conf
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'gdm3/greeter.dconf-defaults(disable-user-list)'
-  copy:
-    src: files/greeter.dconf-defaults
-    dest: /etc/gdm3/greeter.dconf-defaults
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'xdg/user-dirs.conf'
-  copy:
-    src: files/user-dirs.conf
-    dest: /etc/xdg/user-dirs.conf
-    owner: root
-    group: root
-    mode:  '0644'
-- name: '/var/lib/AccountsService/users/gloria(hide from login screen)'
-  copy:
-    src: files/gloria
-    dest: /var/lib/AccountsService/users/gloria
-    owner: root
-    group: root
-    mode:  '0600'
 # - name: Desktop
 #   file:
 #     path: /etc/skel/Desktop
