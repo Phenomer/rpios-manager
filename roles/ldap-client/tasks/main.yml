@@ -66,3 +66,27 @@
     new_control: optional
     new_module_path: pam_group.so
     state: after
+- name: 'pam_unix.so'
+  pamd:
+    name: common-auth
+    type: auth
+    control: "[success=1 default=ignore]"
+    module_path: pam_unix.so
+    new_type: auth
+    new_control: "[success=2 default=ignore]"
+    new_module_path: pam_unix.so
+    module_arguments:
+      - nullok_secure
+    state: updated
+- name: 'pam_sss.so'
+  pamd:
+    name: common-auth
+    type: auth
+    control: "[success=2 default=ignore]"
+    module_path: pam_unix.so
+    new_type: auth
+    new_control: "[success=1 default=ignore]"
+    new_module_path: pam_sss.so
+    module_arguments:
+      - use_first_pass
+    state: after
