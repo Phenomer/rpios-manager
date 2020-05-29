@@ -1,7 +1,21 @@
+- name: 'keyboard pc109'
+  copy:
+    src: files/default_keyboard
+    dest: /etc/default/keyboard
+    owner: root
+    group: root
+    mode:  '0644'
 - name: 'enable NetworkManager'
   copy:
     src: files/netplan_00-installer-config.yaml
     dest: /etc/netplan/00-installer-config.yaml
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'NetworkManager for all users'
+  copy:
+    src: files/NetworkManager.conf
+    dest: /etc/NetworkManager/NetworkManager.conf
     owner: root
     group: root
     mode:  '0644'
@@ -50,26 +64,6 @@
     pkg:
       - thunderbird
       - thunderbird-locale-ja
-- name: '[snap] code'
-  snap:
-    classic: yes
-    name:
-      - code
-- name: '[snap] chromium'
-  snap:
-    classic: yes
-    name:
-      - chromium
-- name: '[snap] blender'
-  snap:
-    classic: yes
-    name:
-      - blender
-- name: '[snap] krita'
-  snap:
-    classic: yes
-    name:
-      - krita
 - name: 'remove unuse packages'
   apt:
     force_apt_get: yes
