@@ -35,6 +35,7 @@
     pkg:
       - tmux
       - zsh
+      - cu
 - name: 'skel/tmux.conf'
   copy:
     src: files/tmux.conf
