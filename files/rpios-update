@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ `id -u` != 0 ]; then
+  echo '[Error] You are not root.'
+  echo 'Run as follows: sudo ubuntubook-update'
+  exit 1
+fi
+
+cd /opt/rpios-update
+
+if [ -e /var/log/dmesg ]; then
+    /bin/cp /var/log/dmesg rpios-update.log
+    echo >> 'rpios-update.log'
+else
+    echo >  'rpios-update.log'
+fi
+
+/bin/date  >> 'rpios-update.log'
+/sbin/ip a >> 'rpios-update.log'
+/bin/df -h >> 'rpios-update.log'
+/usr/bin/host github.com >> 'rpios-update.log'
+/usr/bin/git fetch origin release 2>&1 | tee -a rpios-update.log
+/usr/bin/git reset --hard origin/release 2>&1 | tee -a rpios-update.log
+/usr/bin/git log -n 1 2>&1 | tee -a rpios-update.log
+/usr/local/bin/ansible-playbook playbook-local.yml -v 2>&1 | tee -a rpios-update.log
+curl -X POST https://report.negix.org/report -F "report=@rpios-update.log;type=text/plain" -A 'rpios-update-0.0.1'

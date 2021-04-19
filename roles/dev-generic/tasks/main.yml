@@ -6,16 +6,9 @@
       - build-essential
       - cmake
       - bc
-      - mecab
+      - raspberrypi-kernel-headers
       - libssl-dev
       - zlib1g-dev
       - libyaml-dev
-      - linux-headers-generic
-      - sqlite3
-      - libsqlite3-dev
-      - r-base
-      - imagemagick
-      - libmagickcore-dev
-      - libmagickwand-dev
-      - bison
-
+#      - mecab
+#      - r-base

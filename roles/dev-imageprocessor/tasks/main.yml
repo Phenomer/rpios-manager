@@ -1,0 +1,8 @@
+- name: 'development packages(dev-imageprocessor)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - ffmpeg
+      - imagemagick
+      - libmagickcore-dev
+      - libmagickwand-dev

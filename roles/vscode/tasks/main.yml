@@ -1,0 +1,6 @@
+- name: 'vscode'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - code
+

@@ -1,3 +1,3 @@
 - name: REBOOT
   reboot:
-    msg: "Reboot initiated by ubuntubook-update"
+    msg: "Reboot initiated by rpios-update"

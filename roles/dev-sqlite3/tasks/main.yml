@@ -1,0 +1,6 @@
+- name: 'development packages(dev-sqlite3)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - sqlite3
+      - libsqlite3-dev

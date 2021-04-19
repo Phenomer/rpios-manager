@@ -1,0 +1,8 @@
+- name: 'VPN apps'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - wireguard
+      - wireguard-tools
+      - openvpn
+

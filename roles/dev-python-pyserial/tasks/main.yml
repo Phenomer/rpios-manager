@@ -1,0 +1,4 @@
+- name: 'python-pyserial'
+  pip:
+    name:
+      - pyserial

@@ -1,0 +1,10 @@
+- name: 'development packages(opencv)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - libfreetype6-dev
+      - libpng-dev
+- name: 'python libs'
+  pip:
+    name:
+      - matplotlib

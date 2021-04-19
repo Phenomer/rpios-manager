@@ -1,0 +1,10 @@
+- name: 'depend package(ruby-nokogiri)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - bison
+- name: 'ruby gems(nokogiri)'
+  gem:
+    state: latest
+    user_install: no
+    name: nokogiri

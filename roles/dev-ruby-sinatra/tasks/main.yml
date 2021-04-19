@@ -1,0 +1,10 @@
+- name: 'ruby gems(sinatra)'
+  gem:
+    state: latest
+    user_install: no
+    name: sqlite3
+- name: 'ruby gems(httpclient)'
+  gem:
+    state: latest
+    user_install: no
+    name: httpclient

@@ -1,0 +1,3 @@
+dependencies:
+  - dev-ruby
+  - dev-sqlite3

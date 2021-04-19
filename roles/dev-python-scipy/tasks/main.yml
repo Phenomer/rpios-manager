@@ -1,0 +1,5 @@
+- name: 'python libs'
+  pip:
+    name:
+      - numpy
+      - scipy

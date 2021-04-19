@@ -1,0 +1,5 @@
+- name: 'ruby gems(sqlite3)'
+  gem:
+    state: latest
+    user_install: no
+    name: sqlite3

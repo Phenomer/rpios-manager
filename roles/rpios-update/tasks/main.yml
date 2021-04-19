@@ -1,0 +1,22 @@
+- name: 'rpios-update ansible'
+  pip:
+    name: ansible
+- name: 'get rpios-update repo'
+  git:
+    repo: https://github.com/Phenomer/rpios-update
+    version: release
+    dest: /opt/rpios-update
+- name: 'rpios-update sudoers'
+  copy:
+    src: files/sudoers_rpios_update.conf
+    dest: /etc/sudoers.d/rpios-update
+    owner: root
+    group: root
+    mode:  '0440'
+- name: 'rpios-update command'
+  copy:
+    src: files/rpios-update
+    dest: /usr/local/sbin/rpios-update
+    owner: root
+    group: root
+    mode:  '0755'

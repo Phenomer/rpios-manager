@@ -5,97 +5,22 @@
     owner: root
     group: root
     mode:  '0644'
-- name: 'enable NetworkManager'
-  copy:
-    src: files/netplan_00-installer-config.yaml
-    dest: /etc/netplan/00-installer-config.yaml
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'NetworkManager for all users'
-  copy:
-    src: files/NetworkManager.conf
-    dest: /etc/NetworkManager/NetworkManager.conf
-    owner: root
-    group: root
-    mode:  '0644'
 - name: 'desktop & language packages'
   apt:
     force_apt_get: yes
     pkg:
-      - ubuntu-desktop-minimal
-      - language-pack-ja
-      - language-pack-gnome-ja
+      - fcitx-mozc
       - mozc-utils-gui
-      - firefox-locale-ja
-      - gnome-user-docs-ja
-      - ibus-mozc
-      - fonts-noto-cjk-extra
-      - gnome-getting-started-docs-ja
-      - gnome-screenshot
-      - ubuntu-gnome-default-settings
+      - fonts-noto-cjk
+      - fonts-noto-color-emoji
 - name: 'utility packages'
   apt:
     force_apt_get: yes
     pkg:
-      - emacs
-      - openvpn
-      - tigervnc-viewer
-      - ffmpeg
-      - obs-studio
-      - qemu-kvm
+      - realvnc-vnc-server
+      - realvnc-vnc-viewer
       - vlc
-      - gimp
-      - inkscape
-- name: 'ms teams'
-  apt:
-    force_apt_get: yes
-    pkg:
-      - teams
-- name: 'libreoffice'
-  apt:
-    force_apt_get: yes
-    pkg:
-      - libreoffice
-      - libreoffice-l10n-ja
-- name: 'thunderbird'
-  apt:
-    force_apt_get: yes
-    pkg:
-      - thunderbird
-      - thunderbird-locale-ja
-- name: 'remove unuse packages'
-  apt:
-    force_apt_get: yes
-    state: absent
-    pkg:
-    name:
-      - gnome-initial-setup
-- name: 'gdm3/custom.conf(auto login)'
-  copy:
-    src: files/gdm3_custom.conf
-    dest: /etc/gdm3/custom.conf
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'gdm3/greeter.dconf-defaults(disable-user-list)'
-  copy:
-    src: files/greeter.dconf-defaults
-    dest: /etc/gdm3/greeter.dconf-defaults
-    owner: root
-    group: root
-    mode:  '0644'
-- name: 'xdg/user-dirs.conf'
-  copy:
-    src: files/user-dirs.conf
-    dest: /etc/xdg/user-dirs.conf
-    owner: root
-    group: root
-    mode:  '0644'
-- name: '/var/lib/AccountsService/users/gloria(hide from login screen)'
-  copy:
-    src: files/gloria
-    dest: /var/lib/AccountsService/users/gloria
-    owner: root
-    group: root
-    mode:  '0600'
+- name: 'enable vncserver-x11-serviced.service'
+  systemd:
+    enabled: yes
+    name: vncserver-x11-serviced.service

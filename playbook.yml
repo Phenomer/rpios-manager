@@ -1,19 +1,26 @@
 ---
-- hosts: ubuntu
+- hosts: rpios
   gather_facts: no
   become: yes
   roles:
-    - ubuntu-generic
+    - rpios-generic
     - basic-firewall
-    - accounts
-    - ubuntubook-update
-    - ldap-client
     - desktop
+    - vscode
+    - vpn
     - dev-generic
+    - dev-imageprocessor
+    - dev-sqlite3
     - dev-ruby
+    - dev-ruby-nokogiri
+    - dev-ruby-sinatra
+    - dev-ruby-sqlite3
     - dev-python
-    - zoom
-    - latex
-    - emacs
-    - docker
-    - snap
+    - dev-python-scipy
+    - dev-python-flask
+    - dev-python-matplotlib
+    - dev-python-opencv
+    - dev-python-pyserial
+    - dev-python-sounddevice
+    - dev-python-gensim
+#    - rpios-update
