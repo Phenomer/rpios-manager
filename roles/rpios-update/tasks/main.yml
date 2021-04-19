@@ -3,9 +3,9 @@
     name: ansible
 - name: 'get rpios-update repo'
   git:
-    repo: https://github.com/Phenomer/rpios-update
+    repo: https://github.com/Phenomer/rpios-manager
     version: release
-    dest: /opt/rpios-update
+    dest: /opt/rpios-manager
 - name: 'rpios-update sudoers'
   copy:
     src: files/sudoers_rpios_update.conf

@@ -2,11 +2,11 @@
 
 if [ `id -u` != 0 ]; then
   echo '[Error] You are not root.'
-  echo 'Run as follows: sudo ubuntubook-update'
+  echo 'Run as follows: sudo rpios-update'
   exit 1
 fi
 
-cd /opt/rpios-update
+cd /opt/rpios-manager
 
 if [ -e /var/log/dmesg ]; then
     /bin/cp /var/log/dmesg rpios-update.log

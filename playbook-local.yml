@@ -5,7 +5,6 @@
   roles:
     - rpios-generic
     - basic-firewall
-    - rpios-update
     - desktop
     - vscode
     - vpn
@@ -24,3 +23,4 @@
     - dev-python-pyserial
     - dev-python-sounddevice
     - dev-python-gensim
+    - rpios-update
