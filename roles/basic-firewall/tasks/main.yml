@@ -12,5 +12,6 @@
       - nftables
 - name: 'enable nftables.service'
   systemd:
+    state: restarted
     enabled: yes
     name: nftables.service
