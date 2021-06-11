@@ -1,0 +1,29 @@
+---
+- hosts: chroots
+  connection: chroot
+  gather_facts: no
+  become: yes
+  roles:
+    - rpios-generic
+    - rpios-services
+    - rpios-update
+    - basic-firewall
+    - management-tools
+    - desktop
+    - vscode
+    - vpn
+    - dev-generic
+    - dev-imageprocessor
+    - dev-sqlite3
+    - dev-ruby
+    - dev-ruby-nokogiri
+    - dev-ruby-sinatra
+    - dev-ruby-sqlite3
+    - dev-python
+    - dev-python-scipy
+    - dev-python-flask
+    - dev-python-matplotlib
+    - dev-python-pyserial
+    - dev-python-sounddevice
+    - dev-python-gensim
+    - dev-python-opencv
