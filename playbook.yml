@@ -6,6 +6,7 @@
     - rpios-generic
     - rpios-services
     - basic-firewall
+    - management-tools
     - desktop
     - vscode
     - vpn

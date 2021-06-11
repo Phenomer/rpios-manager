@@ -1,3 +1,9 @@
+- name: 'depend package(python-scipy)'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - liblapack-dev
+      - gfortran
 - name: 'python libs'
   pip:
     name:

@@ -1,0 +1,19 @@
+- name: 'management-tools'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - tcpdump
+      - sysstat
+      - htop
+      - iotop
+      - telnet
+      - cu
+      - socat
+      - nmap
+      - busybox-static
+      - ldnsutils
+      - hostapd
+      - strace
+      - ltrace
+      - ldap-utils
+      - parted
