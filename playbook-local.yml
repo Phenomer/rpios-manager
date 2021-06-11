@@ -4,6 +4,7 @@
   gather_facts: no
   roles:
     - rpios-generic
+    - rpios-services
     - basic-firewall
     - desktop
     - vscode

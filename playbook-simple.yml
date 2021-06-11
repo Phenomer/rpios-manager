@@ -1,0 +1,9 @@
+---
+- hosts: rpios
+  gather_facts: no
+  become: yes
+  roles:
+    - rpios-generic
+    - rpios-services
+    - rpios-update
+    - basic-firewall
