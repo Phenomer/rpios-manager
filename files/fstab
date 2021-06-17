@@ -1,0 +1,6 @@
+tmpfs		/tmpfs		tmpfs	size=1g			0	0
+proc            /proc           proc    defaults		0       0
+LABEL=RPI_BOOT  /boot           vfat    defaults		0       2
+LABEL=RPI_ROOT	/               ext4    defaults,noatime	0       1
+LABEL=RPI_HOME	/home		ext4    defaults,noatime	0       1
+

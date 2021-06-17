@@ -5,6 +5,7 @@
       - tmux
       - zsh
       - cu
+      - screen
       - openssh-server
 - name: 'skel/tmux.conf'
   copy:
@@ -36,3 +37,5 @@
   command: raspi-config nonint do_serial 0
 - name: 'GPU memory split'
   command: raspi-config nonint do_memory_split 512
+- name: 'display OverScan'
+  command: raspi-config nonint do_overscan 1

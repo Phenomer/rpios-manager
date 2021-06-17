@@ -5,6 +5,7 @@
   become: yes
   roles:
     - rpios-generic
+    - rpios-filesystem
     - rpios-services
     - rpios-update
     - basic-firewall

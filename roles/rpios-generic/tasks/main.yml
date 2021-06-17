@@ -1,5 +1,13 @@
--name: 'boot options'
-  command: sed -i -e 's/quiet//' -e 's/splash//'  /boot/cmdline.txt
+- name: 'show boot console'
+  replace:
+    path: /boot/cmdline.txt
+    regexp: ' quiet'
+    replace: ''
+- name: 'disable splash'
+  replace:
+    path: /boot/cmdline.txt
+    regexp: ' splash'
+    replace: ''
 - name: 'timezone'
   file:
     src: '/usr/share/zoneinfo/Asia/Tokyo'

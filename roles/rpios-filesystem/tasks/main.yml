@@ -1,0 +1,17 @@
+- name: 'boot option(rootfs)'
+  replace:
+    path: /boot/cmdline.txt
+    regexp: 'root=PARTUUID=[a-z0-9-]*'
+    replace: 'root=/dev/mmcblk0p2'
+- name: 'boot option(disable init_resize.sh)'
+  replace:
+    path: /boot/cmdline.txt
+    regexp: ' init=/usr/lib/raspi-config/init_resize\.sh'
+    replace: ''
+- name: '/etc/fstab'
+  copy:
+    src: files/fstab
+    dest: '/etc/fstab'
+    owner: root
+    group: root
+    mode:  '0644'

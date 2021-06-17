@@ -17,3 +17,7 @@
       - ltrace
       - ldap-utils
       - parted
+- name: 'disable hostapd.service'
+  systemd:
+    enabled: no
+    name: hostapd.service
