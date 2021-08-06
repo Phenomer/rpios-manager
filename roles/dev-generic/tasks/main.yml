@@ -10,5 +10,6 @@
       - libssl-dev
       - zlib1g-dev
       - libyaml-dev
+      - shellcheck
 #      - mecab
 #      - r-base
