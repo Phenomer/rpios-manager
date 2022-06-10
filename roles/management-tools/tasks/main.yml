@@ -16,4 +16,8 @@
       - strace
       - ldap-utils
       - parted
+      - btrfs-progs
+      - squashfs-tools
+      - zstd
+      - httpie
       # - ltrace
