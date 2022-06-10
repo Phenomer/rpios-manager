@@ -14,6 +14,6 @@
       - ldnsutils
       - hostapd
       - strace
-      - ltrace
       - ldap-utils
       - parted
+      # - ltrace
