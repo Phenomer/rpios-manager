@@ -24,3 +24,7 @@
   systemd:
     enabled: yes
     name: vncserver-x11-serviced.service
+- name: 'disable piwiz(first wizard)'
+  file:
+    path: /etc/xdg/autostart/piwiz.desktop
+    state: absent
