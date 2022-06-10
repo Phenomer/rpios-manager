@@ -1,0 +1,16 @@
+- name: 'zabbix-agent'
+  copy:
+    src: files/zabbix_agentd.conf
+    dest: /etc/zabbix/zabbix_agentd.conf
+    owner: root
+    group: root
+    mode:  '0644'
+- name: 'apt zabbix-agent'
+  apt:
+    force_apt_get: yes
+    pkg:
+      - zabbix-agent
+- name: 'disable zabbix-agent.service'
+  systemd:
+    enabled: no
+    name: zabbix-agent.service
