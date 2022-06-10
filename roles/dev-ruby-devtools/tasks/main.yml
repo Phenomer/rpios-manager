@@ -1,0 +1,10 @@
+- name: 'ruby gems(rubocop)'
+  gem:
+    state: latest
+    user_install: no
+    name: rubocop
+- name: 'ruby gems(solargraph)'
+  gem:
+    state: latest
+    user_install: no
+    name: solargraph
