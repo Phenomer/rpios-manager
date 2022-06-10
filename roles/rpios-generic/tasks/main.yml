@@ -1,4 +1,4 @@
--name: 'boot options'
+- name: 'boot options'
   command: sed -i -e 's/quiet//' -e 's/splash//'  /boot/cmdline.txt
 - name: 'timezone'
   file:
