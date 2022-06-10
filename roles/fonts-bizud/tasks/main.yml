@@ -1,0 +1,37 @@
+- name: 'dir /usr/share/fonts/truetype/bizud'
+  file:
+    path: /usr/share/fonts/truetype/bizud
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+- name: 'fonts-bizudgothic-bold'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v1.05/BIZUDGothic-Bold.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
+- name: 'fonts-bizudgothic-regular'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v1.05/BIZUDGothic-Regular.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
+- name: 'fonts-bizudpgothic-bold'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v1.05/BIZUDPGothic-Bold.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
+- name: 'fonts-bizudpgothic-regular'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-gothic/releases/download/v1.05/BIZUDPGothic-Regular.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
+- name: 'fonts-bizudmincho-regular'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v1.05/BIZUDMincho-Regular.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
+- name: 'fonts-bizudpmincho-regular'
+  get_url:
+    url: https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v1.05/BIZUDPMincho-Regular.ttf
+    dest: /usr/share/fonts/truetype/bizud
+    mode: '0644'
