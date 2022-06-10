@@ -17,6 +17,7 @@
     - dev-ruby-nokogiri
     - dev-ruby-sinatra
     - dev-ruby-sqlite3
+    - dev-ruby-devtools
     - dev-python
     - dev-python-scipy
     - dev-python-flask
@@ -25,4 +26,6 @@
     - dev-python-pyserial
     - dev-python-sounddevice
     - dev-python-gensim
+    - dev-python-sudachipy
+    - fonts-bizud
     - rpios-update

@@ -4,6 +4,7 @@
   gather_facts: no
   become: yes
   roles:
+    - rpios-boot
     - rpios-generic
     - rpios-services
     - rpios-update
@@ -19,6 +20,7 @@
     - dev-ruby-nokogiri
     - dev-ruby-sinatra
     - dev-ruby-sqlite3
+    - dev-ruby-devtools
     - dev-python
     - dev-python-scipy
     - dev-python-flask
@@ -27,3 +29,5 @@
     - dev-python-sounddevice
     - dev-python-gensim
     - dev-python-opencv
+    - dev-python-sudachipy
+    - fonts-bizud
