@@ -1,0 +1,5 @@
+- name: 'python-SudachiPy'
+  pip:
+    name:
+      - SudachiPy
+      - SudachiDict-core
