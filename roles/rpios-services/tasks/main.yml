@@ -6,6 +6,13 @@
       - zsh
       - cu
       - openssh-server
+- name: 'wpa_supplicant.conf'
+  copy:
+    src: files/wpa_supplicant.conf
+    dest: /etc/wpa_supplicant/wpa_supplicant.conf
+    owner: root
+    group: root
+    mode:  '0644'
 - name: 'skel/tmux.conf'
   copy:
     src: files/tmux.conf
@@ -34,5 +41,5 @@
   command: raspi-config nonint do_i2c 0
 - name: 'enable Serial'
   command: raspi-config nonint do_serial 0
-- name: 'GPU memory split'
-  command: raspi-config nonint do_memory_split 512
+#- name: 'GPU memory split'
+#  command: raspi-config nonint do_memory_split 512
