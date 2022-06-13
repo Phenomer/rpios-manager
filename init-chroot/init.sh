@@ -5,6 +5,11 @@ set -x
 
 ROOT_DIR='/rpios'
 
+if [ `id -u` != "0" ]; then
+  echo "Root privileges are required."
+  exit 1
+fi
+
 ARCHIVE_DATE=`curl -q -o- https://ftp.jaist.ac.jp/pub/raspberrypi/raspios_arm64/archive/ |
   grep -E -o 'href=\"\./[0-9:-]*/\"' |
   sed -e 's|href="./||' -e 's|/"||' |
