@@ -41,5 +41,15 @@
   command: raspi-config nonint do_i2c 0
 - name: 'enable Serial'
   command: raspi-config nonint do_serial 0
-#- name: 'GPU memory split'
-#  command: raspi-config nonint do_memory_split 512
+- name: 'GPU memory split(1)'
+  shell: grep 'gpu_mem=[0-9]*' /boot/config.txt || echo 'gpu_mem=512' >> /boot/config.txt
+- name: 'GPU memory split(2)'
+  shell: sed -i -e 's/#*[[:space:]]*gpu_mem=[0-9]*/gpu_mem=512/' /boot/config.txt
+- name: 'temp limit(1)'
+  shell: grep 'temp_limit=[0-9]*' /boot/config.txt || echo 'temp_limit=75' >> /boot/config.txt
+- name: 'temp limit(2)'
+  shell: sed -i -e 's/#*[[:space:]]*temp_limit=[0-9]*/temp_limit=75/' /boot/config.txt
+- name: 'config.txt mode 0644'
+  file:
+    path: /boot/config.txt
+    mode: '0644'
