@@ -28,4 +28,6 @@
     - dev-python-gensim
     - dev-python-sudachipy
     - fonts-bizud
+    - zabbix-agent
     - rpios-update
+    - rpios-cleanup

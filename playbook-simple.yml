@@ -7,3 +7,4 @@
     - rpios-services
     - rpios-update
     - basic-firewall
+    - rpios-cleanup

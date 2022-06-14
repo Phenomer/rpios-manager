@@ -1,0 +1,7 @@
+- name: 'cleanup cache'
+  apt:
+    autoclean: yes
+    autoremove: yes
+    force_apt_get: yes
+- name: 'allremove archive cache'
+  command: apt clean

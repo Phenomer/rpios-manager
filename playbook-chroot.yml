@@ -31,3 +31,5 @@
     - dev-python-opencv
     - dev-python-sudachipy
     - fonts-bizud
+    - zabbix-agent
+    - rpios-cleanup
