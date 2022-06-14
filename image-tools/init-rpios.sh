@@ -5,6 +5,7 @@ set -x
 
 ROOT_DIR='/rpios'
 
+cd `dirname ${0}`
 if [ `id -u` != "0" ]; then
   echo "Root privileges are required."
   exit 1
